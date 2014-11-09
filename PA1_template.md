@@ -9,15 +9,6 @@ When you click the **Knit HTML** button a web page will be generated that includ
 ```r
 ## summary(cars)
 echo = TRUE
-df<-read.csv("activity", header = TRUE, sep = ",")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity': No such file or
-## directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
+df<-read.csv("activity.csv", header = TRUE, sep = ",")
 ```
 
