@@ -12,4 +12,13 @@ echo = TRUE
 df<-read.csv("activity.csv", header = TRUE, sep = ",")
 ```
 
+# What is mean total number of steps taken per day?
+
+```r
+dfNoNA<-df[!is.na(df)]
+
+plot(df$steps, type = "h", col = "red", lwd = 10)
+```
+
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
