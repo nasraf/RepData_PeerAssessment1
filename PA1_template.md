@@ -21,9 +21,3 @@ df<-read.csv("activity", header = TRUE, sep = ",")
 ## Error in file(file, "rt"): cannot open the connection
 ```
 
-You can also embed plots, for example:
-
-##```{r fig.width=7, fig.height=6}
-##plot(cars)
-##  ```
-

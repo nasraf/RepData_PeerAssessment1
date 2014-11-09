@@ -11,9 +11,3 @@ echo = TRUE
 df<-read.csv("activity", header = TRUE, sep = ",")
 ```
 
-You can also embed plots, for example:
-
-##```{r fig.width=7, fig.height=6}
-##plot(cars)
-##  ```
-
