@@ -9,15 +9,15 @@ library(knitr)
 ```
 
 # Loading and preprossessing the data
-```{r my_read_process_data}
+```{r my_read_process_data, echo=TRUE}
 
-echo = TRUE
+
 df<-read.csv("activity.csv", header = TRUE, sep = ",")
 
 ```
 
 # What is mean total number of steps taken per day?
-```{r my_sum_mean_median}
+```{r Hist_Totsteps_eachDay,echo=TRUE}
 #1.Historgram of total number of steps taken each day
 
 df_sum<-aggregate(df$steps,list(df$date), sum, na.rm=TRUE)

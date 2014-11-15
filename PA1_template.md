@@ -12,7 +12,6 @@ library(knitr)
 # Loading and preprossessing the data
 
 ```r
-echo = TRUE
 df<-read.csv("activity.csv", header = TRUE, sep = ",")
 ```
 
@@ -26,7 +25,7 @@ df_sum<-aggregate(df$steps,list(df$date), sum, na.rm=TRUE)
 hist(df_sum$x,xlab="Total Number of steps",main = "Total Number of Steps Taken Each Day", col="Blue")
 ```
 
-![plot of chunk my_sum_mean_median](figure/my_sum_mean_median-1.png) 
+![plot of chunk Hist_Totsteps_eachDay](figure/Hist_Totsteps_eachDay-1.png) 
 
 ```r
 #2. Calculation and report of Mean and Median of the total number of steps taken per day
