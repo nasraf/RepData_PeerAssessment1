@@ -200,79 +200,10 @@ factday<- function(data) {
 
 
 
-#dfnew$factday<-sapply(dfnew$date, FUN=factday)
-
-
 ## 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
 
-ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("5-minute Interval") + ylab("Number of Steps")
+#ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("5-minute Interval") + ylab("Number of Steps")
 ```
-
-```
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-```
-
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 # Submitting the Assignment
 ## 1. Committed my PA1_template.Rmd file to the master branch of my git repository

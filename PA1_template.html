@@ -386,78 +386,10 @@ factday&lt;- function(data) {
 
 
 
-#dfnew$factday&lt;-sapply(dfnew$date, FUN=factday)
-
-
 ## 2. Make a panel plot containing a time series plot (i.e. type = &quot;l&quot;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
 
-ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab(&quot;5-minute Interval&quot;) + ylab(&quot;Number of Steps&quot;)
+#ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab(&quot;5-minute Interval&quot;) + ylab(&quot;Number of Steps&quot;)
 </code></pre>
-
-<pre><code>## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-## geom_path: Each group consist of only one observation. Do you need to adjust the group aesthetic?
-</code></pre>
-
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
 
 <h1>Submitting the Assignment</h1>
 
