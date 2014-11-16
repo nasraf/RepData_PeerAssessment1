@@ -16,10 +16,10 @@ library(data.table)
 ```
 
 # Loading and preprossessing the data
-# the data for this assignment was downloaded from the website and the variable included in this dataset are:
-. steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
-. date: The date on which the measurement was taken in YYYY-MM-DD format
-. interval: Identifier for the 5-minutes interval in which measurement was taken
+## the data for this assignment was downloaded from the website and the variable included in this dataset are:
+## steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
+## date: The date on which the measurement was taken in YYYY-MM-DD format
+## interval: Identifier for the 5-minutes interval in which measurement was taken
 ```{r my_read_process_data, echo=TRUE}
 
 
@@ -37,13 +37,13 @@ df_sum<-aggregate(df$steps,list(df$date), sum, na.rm=TRUE)
 
 hist(df_sum$x,xlab="Total Number of steps",breaks =10, main = "Total Number of Steps Taken Each Day", col="Blue")
 
-#2. Calculation and report of Mean and Median of the total number of steps taken per day
+##2. Calculation and report of Mean and Median of the total number of steps taken per day
 
 
 day_mean<-ddply(df, ~date, summarise, mean=mean(steps, na.rm=TRUE))
 day_median<-ddply(df, ~date, summarise, median=median(steps, na.rm=TRUE))
 
-# Calculate and report the mean/median of total steps across all days
+##Calculate and report the mean/median of total steps across all days
 
 df_mean<-mean(df_sum$x)
 df_mean
@@ -54,7 +54,7 @@ df_median
 # What is the average daily activity pattern ?
 ```{r average_daily_activity_pattern}
 
-#1. A time series plot (i.e. type = "l") of the 5-minute interval(x-axis) and the average number of steps taken, averaged across all days (y-axis)
+##1. A time series plot (i.e. type = "l") of the 5-minute interval(x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 
 interval_mean<-aggregate(df$steps,list(df$interval), sum, na.rm=TRUE)
@@ -62,7 +62,7 @@ names(interval_mean)<-c("interval","averaged_steps")
 
 ggplot(interval_mean, aes(interval, averaged_steps)) + geom_line(size=1, colour="#000099") + ggtitle("Average Daily Activity") + xlab("5-minute Interval") + ylab("Average Number Of steps") + theme(panel.background = element_rect(fill = 'white', colour = 'black'))
 
-#2. 5-minute interval, on average across all the days in the dataset, containing the maximum number of steps
+##2. 5-minute interval, on average across all the days in the dataset, containing the maximum number of steps
 
 df_max= which.max(interval_mean$averaged_steps)
 df_max
@@ -108,7 +108,7 @@ names(dfnew_sum)<-c("date","averaged_steps")
 
 hist(dfnew_sum$averaged_steps,xlab="Total Number of steps (missing data filled in)",breaks = 10,main = "Total Number of Steps Taken Each Day", col="green")
 
-# Calculate and report the mean and median total number of steps taken per day
+## Calculate and report the mean and median total number of steps taken per day
 dfnew_mean<-mean(dfnew_sum$averaged_steps)
 dfnew_mean
 
@@ -116,10 +116,11 @@ dfnew_median<-median(dfnew_sum$averaged_steps)
 dfnew_median
 
 # Do these values differ from the estimates from the first part of the assignment ?
-## Yes, these values differ from the estimates from the first part of the assignment, xxxxx.
+## Yes, these values differ from the estimates from the first part of the assignment, 
 
 # What is the impact of imputing missing data on the estimates of the total daily number of steps ?
 
+## The frequency of total steps per day had increased between 7000 and 10000.
 
 ```
 # Are there differences in activty pattern between weekdays and weekends ?
@@ -136,7 +137,6 @@ factday<- function(data) {
     "Weekday"
     }
   }
-
 
 
 ## 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
