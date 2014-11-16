@@ -127,9 +127,9 @@ dfnew_median
 ```{r}
 ## 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
+factday=function(date){
 
-factday<- function(data) {
-  if (weekdays(as.Date(df$date)) %in% c('Saturday','Sunday')) {
+  if (weekdays(as.Date(date)) %in% c('Saturday','Sunday')) {
     "Weekend"
     
     }
@@ -138,10 +138,13 @@ factday<- function(data) {
     }
   }
 
+dfnew_sum$date<-sapply(dfnew_sum$date,factday)
+dfnew_sum
 
 ## 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
 
-#ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("5-minute Interval") + ylab("Number of Steps")
+
+ggplot(dfnew_sum, aes(date, dfnew_sum$averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("Interval") + ylab("Number of Steps")
 
 ```
 

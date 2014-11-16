@@ -189,9 +189,9 @@ dfnew_median
 ```r
 ## 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
+factday=function(date){
 
-factday<- function(data) {
-  if (weekdays(as.Date(df$date)) %in% c('Saturday','Sunday')) {
+  if (weekdays(as.Date(date)) %in% c('Saturday','Sunday')) {
     "Weekend"
     
     }
@@ -200,11 +200,83 @@ factday<- function(data) {
     }
   }
 
+dfnew_sum$date<-sapply(dfnew_sum$date,factday)
+dfnew_sum
+```
 
+```
+##       date averaged_steps
+## 1  Weekday       9312.632
+## 2  Weekday        126.000
+## 3  Weekday      11352.000
+## 4  Weekday      12116.000
+## 5  Weekday      13294.000
+## 6  Weekend      15420.000
+## 7  Weekend      11015.000
+## 8  Weekday       9460.333
+## 9  Weekday      12811.000
+## 10 Weekday       9900.000
+## 11 Weekday      10304.000
+## 12 Weekday      17382.000
+## 13 Weekend      12426.000
+## 14 Weekend      15098.000
+## 15 Weekday      10139.000
+## 16 Weekday      15084.000
+## 17 Weekday      13452.000
+## 18 Weekday      10056.000
+## 19 Weekday      11829.000
+## 20 Weekend      10395.000
+## 21 Weekend       8821.000
+## 22 Weekday      13460.000
+## 23 Weekday       8918.000
+## 24 Weekday       8355.000
+## 25 Weekday       2492.000
+## 26 Weekday       6778.000
+## 27 Weekend      10119.000
+## 28 Weekend      11458.000
+## 29 Weekday       5018.000
+## 30 Weekday       9819.000
+## 31 Weekday      15414.000
+## 32 Weekday       9263.653
+## 33 Weekday      10600.000
+## 34 Weekend      10571.000
+## 35 Weekend       9370.333
+## 36 Weekday      10439.000
+## 37 Weekday       8334.000
+## 38 Weekday      12883.000
+## 39 Weekday       3219.000
+## 40 Weekday       9387.420
+## 41 Weekend       9418.208
+## 42 Weekend      12608.000
+## 43 Weekday      10765.000
+## 44 Weekday       7336.000
+## 45 Weekday       9209.441
+## 46 Weekday         41.000
+## 47 Weekday       5441.000
+## 48 Weekend      14339.000
+## 49 Weekend      15110.000
+## 50 Weekday       8841.000
+## 51 Weekday       4472.000
+## 52 Weekday      12787.000
+## 53 Weekday      20427.000
+## 54 Weekday      21194.000
+## 55 Weekend      14478.000
+## 56 Weekend      11834.000
+## 57 Weekday      11162.000
+## 58 Weekday      13646.000
+## 59 Weekday      10183.000
+## 60 Weekday       7047.000
+## 61 Weekday       9291.812
+```
+
+```r
 ## 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
 
-#ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("5-minute Interval") + ylab("Number of Steps")
+
+ggplot(dfnew_sum, aes(date, dfnew_sum$averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab("Interval") + ylab("Number of Steps")
 ```
+
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 # Submitting the Assignment
 ## 1. Committed my PA1_template.Rmd file to the master branch of my git repository

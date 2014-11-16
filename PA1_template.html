@@ -377,9 +377,9 @@ dfnew_median
 
 <pre><code class="r">## 1. Create a new factor variable in the dataset with two levels -- &quot;weekday&quot; and &quot;weekend&quot; indicating whether a given date is a weekday or weekend day.
 
+factday=function(date){
 
-factday&lt;- function(data) {
-  if (weekdays(as.Date(df$date)) %in% c(&#39;Saturday&#39;,&#39;Sunday&#39;)) {
+  if (weekdays(as.Date(date)) %in% c(&#39;Saturday&#39;,&#39;Sunday&#39;)) {
     &quot;Weekend&quot;
 
     }
@@ -388,11 +388,81 @@ factday&lt;- function(data) {
     }
   }
 
-
-## 2. Make a panel plot containing a time series plot (i.e. type = &quot;l&quot;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
-
-#ggplot(dfnew_sum, aes(date, averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab(&quot;5-minute Interval&quot;) + ylab(&quot;Number of Steps&quot;)
+dfnew_sum$date&lt;-sapply(dfnew_sum$date,factday)
+dfnew_sum
 </code></pre>
+
+<pre><code>##       date averaged_steps
+## 1  Weekday       9312.632
+## 2  Weekday        126.000
+## 3  Weekday      11352.000
+## 4  Weekday      12116.000
+## 5  Weekday      13294.000
+## 6  Weekend      15420.000
+## 7  Weekend      11015.000
+## 8  Weekday       9460.333
+## 9  Weekday      12811.000
+## 10 Weekday       9900.000
+## 11 Weekday      10304.000
+## 12 Weekday      17382.000
+## 13 Weekend      12426.000
+## 14 Weekend      15098.000
+## 15 Weekday      10139.000
+## 16 Weekday      15084.000
+## 17 Weekday      13452.000
+## 18 Weekday      10056.000
+## 19 Weekday      11829.000
+## 20 Weekend      10395.000
+## 21 Weekend       8821.000
+## 22 Weekday      13460.000
+## 23 Weekday       8918.000
+## 24 Weekday       8355.000
+## 25 Weekday       2492.000
+## 26 Weekday       6778.000
+## 27 Weekend      10119.000
+## 28 Weekend      11458.000
+## 29 Weekday       5018.000
+## 30 Weekday       9819.000
+## 31 Weekday      15414.000
+## 32 Weekday       9263.653
+## 33 Weekday      10600.000
+## 34 Weekend      10571.000
+## 35 Weekend       9370.333
+## 36 Weekday      10439.000
+## 37 Weekday       8334.000
+## 38 Weekday      12883.000
+## 39 Weekday       3219.000
+## 40 Weekday       9387.420
+## 41 Weekend       9418.208
+## 42 Weekend      12608.000
+## 43 Weekday      10765.000
+## 44 Weekday       7336.000
+## 45 Weekday       9209.441
+## 46 Weekday         41.000
+## 47 Weekday       5441.000
+## 48 Weekend      14339.000
+## 49 Weekend      15110.000
+## 50 Weekday       8841.000
+## 51 Weekday       4472.000
+## 52 Weekday      12787.000
+## 53 Weekday      20427.000
+## 54 Weekday      21194.000
+## 55 Weekend      14478.000
+## 56 Weekend      11834.000
+## 57 Weekday      11162.000
+## 58 Weekday      13646.000
+## 59 Weekday      10183.000
+## 60 Weekday       7047.000
+## 61 Weekday       9291.812
+</code></pre>
+
+<pre><code class="r">## 2. Make a panel plot containing a time series plot (i.e. type = &quot;l&quot;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axix)
+
+
+ggplot(dfnew_sum, aes(date, dfnew_sum$averaged_steps)) + facet_grid (. ~date) + geom_line() + xlab(&quot;Interval&quot;) + ylab(&quot;Number of Steps&quot;)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
 
 <h1>Submitting the Assignment</h1>
 
