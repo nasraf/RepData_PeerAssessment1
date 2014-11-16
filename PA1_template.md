@@ -45,10 +45,9 @@ print(df_median)
 ```
 ## [1] 10395
 ```
+# What is the average daily activity pattern ?
 
 ```r
-## What is the average daily activity pattern ?
-
 #1. A time series plot (i.e. type = "l") of the 5-minute interval(x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 interval_mean<-aggregate(df$steps,list(df$interval), sum, na.rm=TRUE)
@@ -67,9 +66,9 @@ print(df_max)
 ```
 ## [1] 10927
 ```
+# Inputing missing values
 
 ```r
-# Inputing missing values
 ## 1. Calculate and report the total number of missing values in the dataset (i.e. the total numbers of rows with NAs)
 
 nrows_NA<-nrow(df)

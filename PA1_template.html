@@ -242,9 +242,9 @@ print(df_median)
 <pre><code>## [1] 10395
 </code></pre>
 
-<pre><code class="r">## What is the average daily activity pattern ?
+<h1>What is the average daily activity pattern ?</h1>
 
-#1. A time series plot (i.e. type = &quot;l&quot;) of the 5-minute interval(x-axis) and the average number of steps taken, averaged across all days (y-axis)
+<pre><code class="r">#1. A time series plot (i.e. type = &quot;l&quot;) of the 5-minute interval(x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 interval_mean&lt;-aggregate(df$steps,list(df$interval), sum, na.rm=TRUE)
 ggplot(interval_mean, aes(Group.1, x)) + geom_line() + xlab(&quot;5-minute Interval&quot;) + ylab(&quot;Average Number Of steps&quot;)
@@ -261,8 +261,9 @@ print(df_max)
 <pre><code>## [1] 10927
 </code></pre>
 
-<pre><code class="r"># Inputing missing values
-## 1. Calculate and report the total number of missing values in the dataset (i.e. the total numbers of rows with NAs)
+<h1>Inputing missing values</h1>
+
+<pre><code class="r">## 1. Calculate and report the total number of missing values in the dataset (i.e. the total numbers of rows with NAs)
 
 nrows_NA&lt;-nrow(df)
 nrows_NoNA&lt;-nrow(na.omit(df))
